@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block content %}<h1>Financial Dashboard</h1>
+<div class="grid"><div class="card"><h3>Total Income</h3><h2>{{ income }}</h2></div><div class="card"><h3>Total Expenses</h3><h2>{{ expense }}</h2></div><div class="card"><h3>Balance</h3><h2>{{ balance }}</h2></div></div>
+<div class="card"><h2>Upcoming Bills</h2>{% for b in bills %}<p>{{ b.category }} — {{ b.amount }} — due {{ b.due_date }}</p>{% empty %}<p>No pending bills.</p>{% endfor %}</div>{% endblock %}

@@ -1,0 +1,2 @@
+{% extends "base.html" %}{% block content %}<div class="card"><h2>Add Bill</h2><form method="post">{% csrf_token %}{{ form.as_p }}<button>Save Bill</button></form></div>
+<div class="card"><h2>Bill History</h2>{% for b in bills %}<p>{{ b.category }} | {{ b.amount }} | {{ b.due_date }} | {% if b.paid %}Paid{% else %}Pending{% endif %}</p>{% empty %}<p>No bills.</p>{% endfor %}</div>{% endblock %}
